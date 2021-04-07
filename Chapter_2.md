@@ -44,14 +44,10 @@ ON employees (employee_id, subsidiary_id);
 ```
 A query for a particular employee has to take the full primary key into account— that is, the SUBSIDIARY_ID column also has to be used:
 ```sql
-SELECT
-FROM
-WHERE
-AND
-first_name, last_name
-employees
-employee_id = 123
-subsidiary_id = 30;
+SELECT first_name, last_name
+FROM employees
+WHERE employee_id = 123
+AND subsidiary_id = 30;
 ```
 But what happens when using only one of the key columns, for example, when searching all employees of a subsidiary?
 
